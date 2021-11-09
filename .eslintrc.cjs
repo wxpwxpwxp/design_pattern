@@ -2,9 +2,7 @@ module.exports = {
     "env": {
         "node": true,
         "es2021": true,
-        "jest/globals": true
     },
-    "plugins": ["jest"],
     "extends": [
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended"
@@ -17,7 +15,7 @@ module.exports = {
     },
     "rules": {
         "indent": ["error", 2],
-        "semi": ["error", "always"],
+        "semi": "error",
         "quotes": ["error", "single"],
         "eqeqeq": "error",
         "default-case": "error",

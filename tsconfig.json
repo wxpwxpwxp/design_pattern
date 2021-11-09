@@ -11,8 +11,10 @@
     "pretty": true,
     "removeComments": false,
     "esModuleInterop": true,
+    "noImplicitOverride": true,
     "lib": [
       "esnext",
+      "DOM"
     ]
   },
   "exclude": [
