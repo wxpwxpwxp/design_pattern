@@ -1,4 +1,5 @@
 abstract class AnimalFactory {
+  abstract step: number;
   abstract run(): void;
 }
 
@@ -28,11 +29,21 @@ class Tiger extends Cat {
   }
 }
 
-const animals = [new Cat(), new Dog(), new Tiger()];
+type AnimalCtr = typeof Dog | typeof Cat | typeof Tiger
 
-const cats: Cat[] = [new Cat(), new Tiger()];
-cats;
+class Animals {
+  instance: AnimalFactory[];
 
-animals.forEach(animal => animal.run());
+  constructor(factorys: AnimalCtr[]) {
+    this.instance = factorys.map(ctr => new ctr());
+  }
+}
 
-animals.forEach(animal => console.log(animal.step));
+const animals = new Animals([Dog, Cat, Tiger]);
+
+
+animals.instance.forEach(animal => animal.run());
+
+animals.instance.forEach(animal => console.log(animal.step));
+
+export {};
