@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "module": "esnext",
+    "module": "CommonJS",
     "moduleResolution": "node",
     "target": "esnext",
     "sourceMap": true,
@@ -23,7 +23,6 @@
   ],
   "include": [
     "src",
-    "example",
     "babel.config.js",
     ".eslintrc.cjs"
   ],
